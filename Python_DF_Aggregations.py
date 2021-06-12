@@ -1,3 +1,8 @@
+# COMMAND ---------- 
+#PySpark Functions
+from pyspark.sql.functions import col, when, lead, expr
+from pyspark.sql.window import Window
+
 # COMMAND ----------
 ######## Load DF from blob storage ##############
 df = spark.read.format("csv") \
@@ -20,3 +25,4 @@ df.select(mean("Department_id")).show()
 # COMMAND ----------
 #show count
 df.select(count("Department_id")).show()
+
